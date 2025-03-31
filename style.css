@@ -1,0 +1,264 @@
+/* Estilos generales - Paleta monocromática */
+:root {
+    --black: #000000;
+    --dark-gray: #121212;
+    --medium-gray: #2d2d2d;
+    --light-gray: #4a4a4a;
+    --lighter-gray: #7a7a7a;
+    --lightest-gray: #e0e0e0;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    color: var(--lightest-gray);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: var(--black);
+}
+
+#matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+.cv-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    background-color: rgba(18, 18, 18, 0.85);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--light-gray);
+}
+
+/* Encabezado */
+.cv-header {
+    padding: 2.5rem;
+    text-align: center;
+    background-color: var(--dark-gray);
+    color: var(--white);
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.cv-header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: var(--white);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.cv-header h2 {
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin: 0.8rem 0 0;
+    color: var(--lighter-gray);
+    letter-spacing: 1px;
+}
+
+/* Sección de certificados */
+.section-title {
+    font-size: 1.5rem;
+    color: var(--white);
+    margin: 2.5rem 2rem 1.5rem;
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid var(--light-gray);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.certificate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem 3rem;
+}
+
+/* Tarjetas de certificados */
+.certificate-card {
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--dark-gray);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    border-color: var(--lighter-gray);
+}
+
+.card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+.certificate-card h4 {
+    font-size: 1.2rem;
+    margin: 0 0 0.8rem;
+    color: var(--white);
+    font-weight: 600;
+}
+
+.institution {
+    font-size: 0.95rem;
+    color: var(--lighter-gray);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: var(--light-gray);
+}
+
+/* Botón */
+.view-btn {
+    display: block;
+    text-align: center;
+    background-color: var(--medium-gray);
+    color: var(--white);
+    padding: 1rem;
+    margin-top: auto;
+    text-decoration: none;
+    border: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    border-top: 1px solid var(--light-gray);
+}
+
+.view-btn:hover {
+    background-color: var(--light-gray);
+    color: var(--white);
+}
+
+/* Pie de página */
+.cv-footer {
+    background-color: var(--black);
+    color: var(--lighter-gray);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border-top: 1px solid var(--light-gray);
+}
+
+.contact-info {
+    font-size: 1rem;
+}
+
+.contact-info span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    gap: 0.8rem;
+}
+
+.icon-contact {
+    color: var(--lightest-gray);
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* Disclaimer */
+.disclaimer {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: rgba(45, 45, 45, 0.5);
+    border-top: 1px dashed var(--lighter-gray);
+    font-size: 0.85rem;
+    color: var(--lighter-gray);
+    text-align: center;
+    font-style: italic;
+}
+
+.disclaimer i {
+    color: var(--lightest-gray);
+    margin-right: 0.5rem;
+}
+
+.disclaimer p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .certificate-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1.5rem 2rem;
+        gap: 1.5rem;
+    }
+    
+    .section-title {
+        margin: 2rem 1.5rem 1rem;
+        font-size: 1.3rem;
+    }
+    
+    .cv-header h1 {
+        font-size: 2rem;
+    }
+    
+    .cv-header h2 {
+        font-size: 1.1rem;
+    }
+    
+    .cv-header {
+        padding: 2rem 1.5rem;
+    }
+    
+    .contact-info span {
+        justify-content: flex-start;
+        margin-left: 2rem;
+    }
+    
+    .disclaimer {
+        font-size: 0.8rem;
+        padding: 1rem 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cv-container {
+        margin: 1rem;
+    }
+    
+    .cv-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 1.2rem;
+    }
+    
+    .certificate-card h4 {
+        font-size: 1.1rem;
+    }
+    
+    .contact-info span {
+        margin-left: 0;
+        font-size: 0.9rem;
+    }
+}
